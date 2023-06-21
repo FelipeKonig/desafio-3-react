@@ -1,3 +1,4 @@
+import { Post } from './Post'
 import { PostLabel, SearchForm, SectionContainer } from './styles'
 
 export function Section() {
@@ -10,6 +11,7 @@ export function Section() {
       <SearchForm>
         <input placeholder="Buscar conteúdo"></input>
       </SearchForm>
+      <Post />
     </SectionContainer>
   )
 }
