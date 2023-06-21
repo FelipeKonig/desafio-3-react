@@ -35,5 +35,6 @@ export const Effect = styled.img<EffectProps>`
     props.side === 'right' &&
     css`
       align-items: flex-end;
+      transform: scaleX(-1);
     `}
 `
