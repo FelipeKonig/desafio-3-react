@@ -5,6 +5,4 @@ export const BlogContainer = styled.article`
   margin: 0 auto;
   max-width: 54rem;
   padding: 1rem;
-
-  height: 100vw;
 `

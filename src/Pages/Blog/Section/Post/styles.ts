@@ -46,7 +46,10 @@ export const PostDescription = styled.p`
   color: ${(props) => props.theme['base-text']};
 
   max-height: 8rem;
-  white-space: normal;
   overflow: hidden;
   text-overflow: ellipsis;
+
+  &:hover {
+    overflow: overlay;
+  }
 `

@@ -5,7 +5,7 @@ export const SectionContainer = styled.section`
   flex-direction: column;
 
   width: 100%;
-  margin-top: 13rem;
+  margin-top: 11rem;
 `
 
 export const PostLabel = styled.div`

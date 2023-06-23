@@ -1,47 +1,28 @@
-import styled from 'styled-components'
+import { styled } from 'styled-components'
 
-export const Card = styled.header`
+export const CardContainer = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
 
+  padding-left: 2rem;
+  padding-right: 2rem;
   margin: -4rem auto;
   width: 100%;
   min-height: 13.25rem;
   background: ${(props) => props.theme['base-profile']};
   box-shadow: 0px 2px 28px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
-
-  img {
-    padding-top: 1rem;
-    border-radius: 8px;
-    width: 100%;
-    max-width: 9.25rem;
-    height: 100%;
-    max-height: 10rem;
-  }
 `
 
-export const ProfileContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  margin-left: 2.5rem;
-  margin-right: 2rem;
-`
-
-export const Description = styled.div`
-  display: block;
-  width: 70%;
-  min-width: 24rem;
-`
-
-export const Name = styled.span`
+export const Options = styled.span`
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
+
+  width: 100%;
+  margin-top: -2rem;
+  font-weight: bold;
 
   a {
     display: flex;
@@ -50,7 +31,6 @@ export const Name = styled.span`
     gap: 0.5rem;
     color: ${(props) => props.theme.blue};
     font-size: 0.75rem;
-    font-weight: bold;
     line-height: 160%;
     text-transform: uppercase;
     border: 0;
@@ -62,11 +42,16 @@ export const Name = styled.span`
   }
 `
 
-export const Bio = styled.div`
-  line-height: 160%;
-  margin-top: 1rem;
+export const Title = styled.p`
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
 
-  color: ${(props) => props.theme['base-text']};
+  margin-top: 1.5rem;
+  color: ${(props) => props.theme['base-title']};
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 130%;
 `
 
 export const Info = styled.div`
@@ -80,7 +65,7 @@ export const Info = styled.div`
     display: inline-flex;
     gap: 0.5rem;
 
-    color: ${(props) => props.theme['base-subtitle']};
+    color: ${(props) => props.theme['base-span']};
   }
 
   svg {
