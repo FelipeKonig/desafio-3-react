@@ -4,38 +4,42 @@ import {
   Buildings,
   Users,
 } from 'phosphor-react'
-import Avatar from '../../../assets/avatar.png'
 import { Bio, Card, Description, Info, Name, ProfileContainer } from './styles'
+import { ProfileProps } from '../../../@types/profile'
 
-export function Profile() {
+export function Profile({ user }: { user: ProfileProps }) {
+  console.log('Profile user', user)
+  console.log(user.imgUrl)
+  console.log(user.name)
+  console.log(user.githubUrl)
+  console.log(user.bio)
+  console.log(user.username)
+  console.log(user.company)
+  console.log(user.followers)
   return (
     <Card>
       <ProfileContainer>
-        <img src={Avatar} alt=""></img>
+        <img src={user.imgUrl} alt=""></img>
         <Description>
           <Name>
-            <h2>Cameron Williamson</h2>
-            <a href="">
+            <h2>{user.name}</h2>
+            <a href={user.githubUrl}>
               Github <ArrowSquareUpRight size={12} />
             </a>
           </Name>
-          <Bio>
-            Tristique volutpat pulvinar vel massa, pellentesque egestas. Eu
-            viverra massa quam dignissim aenean malesuada suscipit. Nunc,
-            volutpat pulvinar vel mass.
-          </Bio>
+          <Bio>{user.bio}</Bio>
           <Info>
             <span>
               <GithubLogo size={18} />
-              <p>cameronwll</p>
+              <p>{user.username}</p>
             </span>
             <span>
               <Buildings size={18} />
-              <p>Rocketseat</p>
+              <p>{user.company}</p>
             </span>
             <span>
               <Users size={18} />
-              <p>32 seguidores</p>
+              <p>{user.followers}</p>
             </span>
           </Info>
         </Description>
