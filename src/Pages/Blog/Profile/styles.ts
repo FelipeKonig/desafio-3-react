@@ -26,6 +26,8 @@ export const ProfileContainer = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
+
+  width: 100%;
   margin-top: 2rem;
   margin-bottom: 2rem;
   margin-left: 2.5rem;
@@ -42,6 +44,8 @@ export const Name = styled.span`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  margin-top: 1.5rem;
 
   a {
     display: flex;

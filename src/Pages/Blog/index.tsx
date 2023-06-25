@@ -30,7 +30,7 @@ export function Blog() {
   }, [])
 
   useEffect(() => {
-    fetchUser(user)
+    fetchUser(user || '')
   }, [fetchUser, user])
 
   return (
