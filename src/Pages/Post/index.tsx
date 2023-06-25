@@ -18,7 +18,7 @@ export function Post() {
           re-assigned) values of all types:
         </Text>
         <Code>
-          let foo = 42; // foo is now a number <br /> foo = ‘bar’; //
+          let foo = 42; // foo is now a number <br /> foo = ${'bar'}; //
           <br /> foo is now a string foo = true; // foo is now a boolean
         </Code>
       </Content>
