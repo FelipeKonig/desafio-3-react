@@ -29,7 +29,8 @@ export function Post() {
   }, [number])
   useEffect(() => {
     getPost()
-  }, [getPost])
+    document.title = `GitHub Blog | Post ${number}`
+  }, [getPost, number])
 
   return (
     <PostContainer>

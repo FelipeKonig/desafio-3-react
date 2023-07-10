@@ -17,6 +17,7 @@ export function Blog() {
 
   useEffect(() => {
     fetchUser(user || '')
+    document.title = `GitHub Blog | ${user}`
   }, [fetchUser, user])
 
   return (
