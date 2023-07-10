@@ -1,27 +1,50 @@
+import { useParams } from 'react-router'
 import { Card } from './Card'
-import { Code, Content, PostContainer, Text } from './styles'
+import { Content, PostContainer } from './styles'
+import { useCallback, useEffect, useState } from 'react'
+import { getPostByIssue } from '../../servicesAPI/postService'
+import { PostProps } from '../../@types/post'
+import { ReactMarkdown } from 'react-markdown/lib/react-markdown'
+import remarkGfm from 'remark-gfm'
 
 export function Post() {
+  const [post, setPost] = useState<PostProps>()
+  const { number } = useParams()
+
+  const getPost = useCallback(async () => {
+    if (number !== undefined) {
+      const data = await getPostByIssue(number)
+
+      const newPost: PostProps = {
+        id: data.id,
+        number: data.number,
+        userName: data.user.login,
+        title: data.title,
+        dateCreated: data.created_at,
+        content: data.body,
+        commentsCount: data.comments,
+      }
+      setPost(newPost)
+    }
+  }, [number])
+  useEffect(() => {
+    getPost()
+  }, [getPost])
+
   return (
     <PostContainer>
-      <Card />
-      <Content>
-        <Text>
-          Programming languages all have built-in data structures, but these
-          often differ from one language to another. This article attempts to
-          list the built-in data structures available in JavaScript and what
-          properties they have. These can be used to build other data
-          structures. Wherever possible, comparisons with other languages are
-          drawn. Dynamic typing JavaScript is a loosely typed and dynamic
-          language. Variables in JavaScript are not directly associated with any
-          particular value type, and any variable can be assigned (and
-          re-assigned) values of all types:
-        </Text>
-        <Code>
-          let foo = 42; // foo is now a number <br /> foo = ${'bar'}; //
-          <br /> foo is now a string foo = true; // foo is now a boolean
-        </Code>
-      </Content>
+      {post && (
+        <>
+          <Card post={post} />
+          <Content>
+            <ReactMarkdown
+              // eslint-disable-next-line react/no-children-prop
+              children={post.content}
+              remarkPlugins={[remarkGfm]}
+            />
+          </Content>
+        </>
+      )}
     </PostContainer>
   )
 }
