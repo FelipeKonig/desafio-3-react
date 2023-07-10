@@ -16,7 +16,7 @@ export function Profile({ user }: { user: ProfileProps }) {
           <Name>
             <h2>{user.name}</h2>
             <a href={user.githubUrl} target="_blank" rel="noreferrer">
-              Github <ArrowSquareUpRight size={12} />
+              Github <ArrowSquareUpRight size={16} />
             </a>
           </Name>
           <Bio>{user.bio}</Bio>

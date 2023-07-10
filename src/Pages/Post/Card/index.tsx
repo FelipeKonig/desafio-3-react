@@ -31,10 +31,10 @@ export function Card({ post }: { post: PostProps }) {
         <>
           <Options>
             <a href={`/${user.username}`}>
-              <CaretLeft size={12} /> voltar
+              <CaretLeft size={16} /> voltar
             </a>
             <a href={user.githubUrl} target="_blank" rel="noreferrer">
-              ver no github <ArrowSquareUpRight size={12} />
+              ver no github <ArrowSquareUpRight size={16} />
             </a>
           </Options>
           <Title>{post.title}</Title>

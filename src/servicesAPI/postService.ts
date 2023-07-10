@@ -13,3 +13,10 @@ export async function getPostByIssue(number: string) {
   )
   return response.data
 }
+
+export async function filterPostsByContent(content: string) {
+  const response = await api.get(
+    `https://api.github.com/search/issues?q=${content}repo:rocketseat-education/reactjs-github-blog-challenge`,
+  )
+  return response.data
+}

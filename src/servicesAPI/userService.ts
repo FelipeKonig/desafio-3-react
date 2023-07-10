@@ -2,7 +2,6 @@ import { ProfileProps } from '../@types/profile'
 import { api } from '../lib/axios'
 
 export async function getUser(user: String) {
-  console.log(user)
   const response = await api.get(`users/${user}`)
   const data = response.data
 
