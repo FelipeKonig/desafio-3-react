@@ -44,3 +44,12 @@ export const SearchForm = styled.form`
     }
   }
 `
+
+export const PostContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: center;
+  gap: 2rem;
+`

@@ -8,14 +8,6 @@ import { Bio, Card, Description, Info, Name, ProfileContainer } from './styles'
 import { ProfileProps } from '../../../@types/profile'
 
 export function Profile({ user }: { user: ProfileProps }) {
-  console.log('Profile user', user)
-  console.log(user.imgUrl)
-  console.log(user.name)
-  console.log(user.githubUrl)
-  console.log(user.bio)
-  console.log(user.username)
-  console.log(user.company)
-  console.log(user.followers)
   return (
     <Card>
       <ProfileContainer>
@@ -23,7 +15,7 @@ export function Profile({ user }: { user: ProfileProps }) {
         <Description>
           <Name>
             <h2>{user.name}</h2>
-            <a href={user.githubUrl}>
+            <a href={user.githubUrl} target="_blank" rel="noreferrer">
               Github <ArrowSquareUpRight size={12} />
             </a>
           </Name>
@@ -39,7 +31,7 @@ export function Profile({ user }: { user: ProfileProps }) {
             </span>
             <span>
               <Users size={18} />
-              <p>{user.followers}</p>
+              <p>{user.followers} seguidores</p>
             </span>
           </Info>
         </Description>

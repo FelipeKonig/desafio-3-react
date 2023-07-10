@@ -1,14 +1,5 @@
 import { styled } from 'styled-components'
 
-export const PostContainer = styled.article`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: baseline;
-  justify-content: center;
-  gap: 2rem;
-`
-
 export const PostItem = styled.div`
   width: 24rem;
   height: 16.25rem;
@@ -18,12 +9,13 @@ export const PostItem = styled.div`
   padding: 2rem;
 `
 
-export const PostHeader = styled.header`
+export const PostHeader = styled.a`
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
 
   margin-top: 0.2rem;
+  text-decoration: none;
 
   h3 {
     width: 15rem;
@@ -49,7 +41,8 @@ export const PostDescription = styled.p`
   overflow: hidden;
   text-overflow: ellipsis;
 
-  &:hover {
-    overflow: overlay;
-  }
+  // só funciona no Chrome
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
 `
